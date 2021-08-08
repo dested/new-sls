@@ -3,10 +3,14 @@ import {Static, TObject, TProperties, Type} from '@sinclair/typebox';
 export function makeRequest<TRequest extends TObject<TProperties>, TResponse extends TObject<TProperties>>(request: {
   request: TRequest;
   response: TResponse;
+  route: string;
+  method: 'POST' | 'GET';
   callback: (request: Static<TRequest>) => Promise<Static<TResponse>>;
 }): {
   request: TRequest;
   response: TResponse;
+  route: string;
+  method: 'POST' | 'GET';
   callback: (request: Static<TRequest>) => Promise<Static<TResponse>>;
 } {
   return request;
